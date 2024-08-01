@@ -1,0 +1,143 @@
+.hide {
+    display: none !important;
+}
+
+.disabled {
+    cursor: not-allowed !important;
+}
+
+.disabled a {
+    pointer-events: none !important;
+    color: #AFAFAF !important;
+}
+
+.separator {
+    width: 1px;
+    height: 100%;
+    margin: 0 15px;
+    background-color: #ccc; /* 分隔线颜色 */
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab-active {
+    background-color: #F09199;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.tab-active:hover {
+    background-color: #F09199 !important;
+}
+
+.tab-active a {
+    color: #FFFFFF !important;
+}
+
+.tab-btn {
+    padding: 3px;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.tab-btn:hover {
+    background-color: #c8c8c8;
+}
+
+.bangumi-container-lite {
+    display: grid;
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+.bangumi-container-lite img {
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bangumi-container-lite img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5);
+}
+
+.bangumi-name {
+    text-align: center;
+    font-size: small;
+    color: #939393;
+    margin-top: 5px;
+}
+
+.bangumi-card-lite {
+    display: block;
+    width: 110px;
+}
+
+.bangumi-card-full {
+    display: flex;
+}
+
+.bangumi-card-full img {
+    border-radius: 20px;
+    width: 110px !important;
+}
+
+.bangumi-card-full-right {
+    width: 100%;
+    padding: 5px 0;
+}
+
+.bangumi-card-name-full {
+    margin-left: 15px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.bangumi-card-info-bar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: small;
+    font-weight: bold;
+}
+
+.bangumi-card-info-item {
+    margin: auto 10px;
+    text-align: center;
+}
+
+.bangumi-card-summary {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    max-width: 650px;
+    margin: 10px 15px;
+    font-size: small;
+    color: #939393;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.page-item {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@media (max-width: 500px) {
+    .mobile-hide {
+        display: none !important;
+    }
+}

@@ -1,0 +1,28 @@
+<div class="bangumi-card-lite bangumi-item" style="margin: <%= display_config.margin %>px;">
+    <% if (api === 'bgm') { %>
+        <a href="https://bgm.tv/subject/<%= item.subject_id %>" target="_blank">
+            <img src="<%= `https://lain.bgm.tv/pic/cover/${display_config.image_level}/${item.image}` %>"
+                 data-src="<%= `https://lain.bgm.tv/pic/cover/${display_config.image_level}/${item.image}` %>"
+                 referrerPolicy="no-referrer" width="110" style="width:110px;"/>
+        </a>
+    <% } else if (api === 'mal') { %>
+        <a href="https://myanimelist.net/anime/<%= item.subject_id %>" target="_blank">
+            <% if (display_config.image_level === 'l') { %>
+                <img src="<%= item.image.large %>"
+                     data-src="<%= item.image.large %>"
+                     referrerPolicy="no-referrer" width="110" style="width:110px;"/>
+            <% } else { %>
+                <img src="<%= item.image.large %>"
+                     data-src="<%= item.image.large %>"
+                     referrerPolicy="no-referrer" width="110" style="width:110px;"/>
+            <% } %>
+        </a>
+    <% } else { %>
+        <div><%= __('noData') %></div>
+    <% } %>
+    <% if (display_config.name) { %>
+        <a href="https://bgm.tv/subject/<%= item.subject_id %>" target="_blank">
+            <div class="bangumi-name"><%= item.name_local === '' ? item.name : item.name_local %></div>
+        </a>
+    <% } %>
+</div>

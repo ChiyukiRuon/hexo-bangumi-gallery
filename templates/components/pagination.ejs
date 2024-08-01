@@ -1,0 +1,15 @@
+<div class="pagination hide">
+    <div class="page-item start-btn" onclick="toFirstPage(<%= index%>, <%= display_config.page_size %>)">
+        <a href="javascript:void(0);" rel="external" target="_self"><%= __('start') %></a>
+    </div>
+    <div class="page-item prev-btn" onclick="toPrevPage(<%= index%>, <%= display_config.page_size %>)">
+        <a href="javascript:void(0);" rel="external" target="_self"><%= __('prev') %></a>
+    </div>
+    <div class="page-item page-info">0 / 0</div>
+    <div class="page-item next-btn" onclick="toNextPage(<%= index%>, <%= display_config.page_size %>)">
+        <a href="javascript:void(0);" rel="external" target="_self"><%= __('next') %></a>
+    </div>
+    <div class="page-item end-btn" onclick="toLastPage(<%= index%>, <%= display_config.page_size %>)">
+        <a href="javascript:void(0);" rel="external" target="_self"><%= __('end') %></a>
+    </div>
+</div>

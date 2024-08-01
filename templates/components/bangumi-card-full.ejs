@@ -1,0 +1,46 @@
+<% if (api !== 'bgm') {%>
+    <div style="font-size: large; font-weight: bold"><%= __('onlyBgmNotice') %></div>
+<% } else { %>
+    <div class="bangumi-card-full bangumi-item" style="margin: <%= display_config.margin %>px 0;">
+        <div class="bangumi-card-full-left">
+            <img src="<%= `https://lain.bgm.tv/pic/cover/${display_config.image_level}/${item.image}` %>"
+                 data-src="<%= `https://lain.bgm.tv/pic/cover/${display_config.image_level}/${item.image}` %>"
+                 referrerPolicy="no-referrer" width="110" style="min-width:110px;max-width: 110px"/>
+        </div>
+        <div class="bangumi-card-full-right">
+            <div class="bangumi-card-name-full">
+                <a href="https://bgm.tv/subject/<%= item.subject_id %>"
+                   target="_blank"><%= item.name_local === '' ? item.name : item.name_local %></a>
+            </div>
+            <div class="bangumi-card-info-bar">
+                <% if (index === 1 && display_config.progress) { %>
+                    <div class="bangumi-card-info-item">
+                        <div style="font-weight: normal; margin-bottom: 5px"><%= __('progress') %></div>
+                        <div><%= item.ep_status %> / <%= item.eps %></div>
+                    </div>
+                <% } else { %>
+                    <% if (item.eps === 0) { %>
+                        <div class="bangumi-card-info-item"><%= __('noData') %></div>
+                    <% } else { %>
+                        <div class="bangumi-card-info-item"><%= __('totalEp', item.eps) %></div>
+                    <% } %>
+                <% } %>
+                <div class="separator"></div>
+                <div class="bangumi-card-info-item mobile-hide">
+                    <div style="font-weight: normal; margin-bottom: 5px"><%= __('airDate') %></div>
+                    <% if (item.date) { %>
+                        <div><%= item.date %></div>
+                    <% } else { %>
+                        <div><%= __('noData') %></div>
+                    <% } %>
+                </div>
+                <div class="separator mobile-hide"></div>
+                <div class="bangumi-card-info-item">
+                    <div style="font-weight: normal; margin-bottom: 5px"><%= __('score') %></div>
+                    <div><%= item.score %></div>
+                </div>
+            </div>
+            <div class="bangumi-card-summary" style="font-weight: lighter"><%= item.summary %></div>
+        </div>
+    </div>
+<% } %>
