@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-const I18N = require('hexo-i18n');
+const I18N = require('hexo-i18n')
 const i18n = new I18N({
     languages: ['zh-CN', 'zh-TW', 'en']
-});
+})
 
 i18n.set('zh-CN', {
     planToWatch: '想看',
@@ -21,7 +21,7 @@ i18n.set('zh-CN', {
     score: '评分',
     totalEp: '全 %d 话',
     onlyBgmNotice: '详细布局仅支持Bangumi数据'
-});
+})
 
 i18n.set('zh-TW', {
     planToWatch: '想看',
@@ -39,7 +39,7 @@ i18n.set('zh-TW', {
     score: '評分',
     totalEp: '全 %d 話',
     onlyBgmNotice: '詳細佈局僅支援Bangumi數據'
-});
+})
 
 i18n.set('en', {
     planToWatch: 'Wish',
@@ -57,6 +57,6 @@ i18n.set('en', {
     score: 'Score',
     totalEp: '%d Episodes',
     onlyBgmNotice: 'Full mode only supports Bangumi data'
-});
+})
 
-module.exports.i18n = i18n;
+module.exports.i18n = i18n
