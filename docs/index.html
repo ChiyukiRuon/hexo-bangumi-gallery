@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="https://chiyukiruon.com/images/electro.ICO" type="image/x-icon">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+<body>
+<nav>
+    <a href="#/">简体中文</a>
+    <a href="#/en/">English</a>
+</nav>
+<div id="app"></div>
+<script>
+    window.$docsify = {
+        name: 'Hexo Bangumi Gallery',
+        repo: 'https://github.com/ChiyukiRuon/hexo-bangumi-gallery',
+        loadSidebar: true,
+        subMaxLevel: 3,
+
+        search: {
+            maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+            paths: 'auto', // or 'auto'
+
+            // 支持本地化
+            placeholder: {
+                '/en': 'Type to search',
+                '/': '搜索',
+            },
+
+            // 支持本地化
+            noData: {
+                '/en': 'No Results',
+                '/': '找不到结果',
+            },
+
+            // 搜索标题的最大层级, 1 - 6
+            depth: 3,
+
+            hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+
+            // 避免搜索索引冲突
+            // 同一域下的多个网站之间
+            namespace: 'hexo-bangumi-gallery',
+
+            // 使用不同的索引作为路径前缀（namespaces）
+            // 注意：仅适用于 paths: 'auto' 模式
+            //
+            // 初始化索引时，我们从侧边栏查找第一个路径
+            // 如果它与列表中的前缀匹配，我们将切换到相应的索引
+            pathNamespaces: ['/en', '/'],
+        },
+        copyCode: {
+            buttonText: {
+                '/en': 'Copy to clipboard',
+                '/': '点击复制',
+            },
+            errorText: {
+                '/en': 'Error',
+                '/': '错误',
+            },
+            successText: {
+                '/en': 'Copied',
+                '/': '复制成功',
+            },
+        },
+        pagination: {
+            previousText: {
+                '/en': 'PREV',
+                '/': '上一章',
+            },
+            nextText: {
+                '/en': 'NEXT',
+                '/': '下一章',
+            },
+            crossChapter: true,
+            crossChapterText: true,
+        },
+    }
+</script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+</body>
+</html>

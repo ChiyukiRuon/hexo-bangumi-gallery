@@ -8,5 +8,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="docsify" level="application" />
+    <orderEntry type="library" name="vue" level="application" />
+    <orderEntry type="library" name="prism-shell-session" level="application" />
   </component>
 </module>

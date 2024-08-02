@@ -12,7 +12,7 @@ There are two styles to choose for display. In `lite` mode, only the cover and *
 
 In `lite` mode, only the cover and title of the anime displayed. You can also choose to display only the cover.  
 You can also configure the interval between anime and the number of anime displayed per page in the configuration file. This is described in detail in the configuration section below.
-![lite mode with title displayed](./docs/images/lite_mode_en.png "lite mode with title displayed")
+![lite mode with title displayed](./docs/images/lite_mode_en_1.png "lite mode with title displayed")
 
 ### full mode
 

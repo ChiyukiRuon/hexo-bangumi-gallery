@@ -31,14 +31,16 @@ hexo.extend.generator.register('bangumi-gallery', function (locals) {
             return
         }
 
-        if (this.config.api === 'bgm') {
+        if (this.config.bangumi_gallery.api === 'bgm') {
             getBgmData(this.config.bangumi_gallery.user_id, this)
-        } else if (this.config.api === 'mal') {
+        } else if (this.config.bangumi_gallery.api === 'mal') {
             if (!this.config.bangumi_gallery.api_key) {
                 logger.warn('API key not found')
                 return
             }
             getMalData(this.config.bangumi_gallery.user_id, this.config.bangumi_gallery.api_key, this)
+        } else {
+            logger.warn('Unknown API')
         }
     } else {
         logger.info('Bangumi info found')
@@ -73,6 +75,8 @@ hexo.extend.console.register('bangumi-gallery', 'Get bangumi info', options, fun
                 return
             }
             getMalData(this.config.bangumi_gallery.user_id, this.config.bangumi_gallery.api_key, this)
+        } else {
+            logger.warn('Unknown API')
         }
     } else {
         logger.warn('Unknown connman. Use "hexo bangumi-gallery -h" to see available commands')
