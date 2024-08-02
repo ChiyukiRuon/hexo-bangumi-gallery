@@ -6,6 +6,7 @@ name: publish npm package
 on:
   push:
     branches: [ main ]
+    paths-ignore: ['docs/**', 'README.md', 'README_EN.md']
 
 jobs:
   build:

@@ -2,7 +2,7 @@
 
 ## Bug&建议
 
-请前往 [GitHub Issue](https://github.com/mmdjiji/hexo-bangumi-gallery/issues)
+请前往 [GitHub Issue](https://github.com/ChiyukiRuon/hexo-bangumi-gallery/issues)
 
 ## 获取MyAnimeList API Key
 
