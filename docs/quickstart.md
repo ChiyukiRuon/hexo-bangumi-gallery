@@ -28,6 +28,7 @@ bangumi_gallery:
     margin: 10      # 每个番剧之间的间隔
     page_size: 24     # 每页展示的番剧数量
     progress: true      # 是否在 full 模式下的在看页面展示追番进度
+    lazyload: true    # 是否启用懒加载
   title: '追番'      # 番剧墙页面的标题
   quote: '你能和我看一辈子动画吗'      # 可以用来玩梗（
 ```

@@ -75,6 +75,14 @@ The number of anime displayed per page. `24` by default.
 `display` param  
 **Only valid in `full` mode**. Whether to display the progress of the anime in `Watching` tab. Default is `true`.  
 
+### lazyload(v1.1.0+)
+
+`display` param
+Whether to enable lazy loading.  
+If you want to customize the loading image, you can directly replace `/source/bangumi-gallery/img/loading.gif`, and the replacement image must also be **a gif**. If you want to restore the default placeholder, just delete this file.
+
+!> **NOTE：** Lazy loading is only available over 1.1.0.
+
 ## title
 
 The title of the anime list page. The default is "Bangumi".

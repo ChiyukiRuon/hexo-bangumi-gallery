@@ -1,9 +1,9 @@
-<% if (api !== 'bgm') { %>
+<% if (api !== 'bgm') {%>
     <div style="font-size: large; font-weight: bold"><%= __('onlyBgmNotice') %></div>
 <% } else { %>
     <div class="bangumi-card-full bangumi-item" style="margin: <%= display_config.margin %>px 0;">
         <div class="bangumi-card-full-left">
-            <img src="<%= `https://lain.bgm.tv/pic/cover/${display_config.image_level}/${item.image}` %>"
+            <img src="<%= display_config.lazyload ? "/bangumi-gallery/img/loading.gif" : `https://lain.bgm.tv/pic/cover/${display_config.image_level}/${item.image}` %>"
                  data-src="<%= `https://lain.bgm.tv/pic/cover/${display_config.image_level}/${item.image}` %>"
                  referrerPolicy="no-referrer" width="110" style="min-width:110px;max-width: 110px"/>
         </div>

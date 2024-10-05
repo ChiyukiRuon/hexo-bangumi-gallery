@@ -27,6 +27,7 @@ Add the following configuration to the `_config.yml` file:
         margin: 10      # margin of bangumi item
         page_size: 24     # number of bangumi to display per page
         progress: true      # whether display progress in watching tab with full mode
+        lazyload: true    # whether lazy load images
       title: 'Bangumi'      # title of bangumi gallery page
       quote: 'Isshou bangumi shite kureru.'      # quote of bangumi gallery page
 ```
