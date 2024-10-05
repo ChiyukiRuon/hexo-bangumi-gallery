@@ -1,6 +1,6 @@
 # Hexo Bangumi Gallery
 
-[简体中文](./README.md) | English
+[简体中文](https://github.com/ChiyukiRuon/hexo-bangumi-gallery/blob/main/README.md) | English
 
 A Hexo plugin, show your anime list in your blog. Support to get anime information from [bgm.tv](https://bgm.tv/) and [MyAnimeList](https://myanimelist.net/).
 
@@ -12,15 +12,15 @@ There are two styles to choose for display. In `lite` mode, only the cover and *
 
 In `lite` mode, only the cover and title of the anime displayed. You can also choose to display only the cover.  
 You can also configure the interval between anime and the number of anime displayed per page in the configuration file. This is described in detail in the configuration section below.
-![lite mode with title displayed](./docs/images/lite_mode_en_1.png "lite mode with title displayed")
+![lite mode with title displayed](https://bgmgallery.chiyukiruon.com/images/lite_mode_en_1.png "lite mode with title displayed")
 
 ### full mode
 
 In `full` mode, in addition to the cover and title, it will also display information such as introduction, number of episodes, ratings, air date, etc.
-![full mode](./docs/images/full_mode_en_2.png "full mode")
+![full mode](https://bgmgallery.chiyukiruon.com/images/full_mode_en_2.png "full mode")
 
 For the anime you are watching, you can choose whether to display the current progress in the anime information.
-![display progress in watching tab with full mode](./docs/images/full_mode_en_1.png "display progress in watching tab with full mode")  
+![display progress in watching tab with full mode](https://bgmgallery.chiyukiruon.com/images/full_mode_en_1.png "display progress in watching tab with full mode")  
 **ATTENTION: Due to the MyAnimeList API, you need to provide API Key when using MyAnimeList API to fetch anime information.
 And when using MyAnimeList API to fetch anime information, you can only use `lite` mode.**
 
@@ -49,6 +49,7 @@ And when using MyAnimeList API to fetch anime information, you can only use `lit
         margin: 10      # margin of bangumi item
         page_size: 24     # number of bangumi to display per page
         progress: true      # whether display progress in watching tab with full mode
+        lazyload: true    # whether lazy load images
       title: 'Bangumi'      # title of bangumi gallery page
       quote: 'Isshou bangumi shite kureru.'      # quote of bangumi gallery page
    ```
