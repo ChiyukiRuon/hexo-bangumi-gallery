@@ -6,8 +6,7 @@ const lastPageBtn = document.getElementsByClassName('end-btn')
 
 let totalPage = 0
 let currentPage = 1
-
-function initPagination (index, pageSize) {
+function initPagination(index, pageSize) {
     const bangumiItem = document.getElementsByClassName('bangumi-container')[index].getElementsByClassName('bangumi-item')
 
     currentPage = 1
@@ -40,7 +39,7 @@ function initPagination (index, pageSize) {
     }
 }
 
-function toFirstPage (index, pageSize) {
+function toFirstPage(index, pageSize) {
     if (currentPage === 1) return
     const bangumiItem = document.getElementsByClassName('bangumi-container')[index].getElementsByClassName('bangumi-item')
 
@@ -68,7 +67,7 @@ function toFirstPage (index, pageSize) {
     lastPageBtn[index].classList.remove('disabled')
 }
 
-function toPrevPage (index, pageSize) {
+function toPrevPage(index, pageSize) {
     if (currentPage === 1) return
     const bangumiItem = document.getElementsByClassName('bangumi-container')[index].getElementsByClassName('bangumi-item')
 
@@ -99,7 +98,7 @@ function toPrevPage (index, pageSize) {
     lastPageBtn[index].classList.remove('disabled')
 }
 
-function toNextPage (index, pageSize) {
+function toNextPage(index, pageSize) {
     if (currentPage === totalPage) return
     const bangumiItem = document.getElementsByClassName('bangumi-container')[index].getElementsByClassName('bangumi-item')
 
@@ -130,7 +129,7 @@ function toNextPage (index, pageSize) {
     }
 }
 
-function toLastPage (index, pageSize) {
+function toLastPage(index, pageSize) {
     if (currentPage === totalPage) return
     const bangumiItem = document.getElementsByClassName('bangumi-container')[index].getElementsByClassName('bangumi-item')
 

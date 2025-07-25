@@ -3,9 +3,10 @@
 
 const fs = require('hexo-fs')
 const path = require('path')
-const getBgmData = require('hexo-bangumi-gallery/api/get-bgm-data')
-const getMalData = require('hexo-bangumi-gallery/api/get-mal-data')
+const bgm = require('./api/get-bgm-data')
+const getMalData = require('./api/get-mal-data')
 const logger = require('./utils/logger')
+const configProvider = require("hexo-bangumi-gallery/utils/config-provider");
 
 const options = {
     options: [
@@ -31,14 +32,20 @@ hexo.extend.generator.register('bangumi-gallery', function (locals) {
             return
         }
 
+        const allDisplayConfig = configProvider.allDisplayConfig(this.config.bangumi_gallery)
+
         if (this.config.bangumi_gallery.api === 'bgm') {
-            getBgmData(this.config.bangumi_gallery.user_id, this)
+            if (allDisplayConfig.book.enable) bgm.getBgmData(this.config.bangumi_gallery.user_id, 1, this)
+            if (allDisplayConfig.bangumi.enable) bgm.getBgmData(this.config.bangumi_gallery.user_id, 2, this)
+            if (allDisplayConfig.music.enable) bgm.getBgmData(this.config.bangumi_gallery.user_id, 3, this)
+            if (allDisplayConfig.game.enable) bgm.getBgmData(this.config.bangumi_gallery.user_id, 4, this)
         } else if (this.config.bangumi_gallery.api === 'mal') {
             if (!this.config.bangumi_gallery.api_key) {
                 logger.warn('API key not found')
                 return
             }
-            getMalData(this.config.bangumi_gallery.user_id, this.config.bangumi_gallery.api_key, this)
+            if (allDisplayConfig.book.enable) getMalData(this.config.bangumi_gallery.user_id, this.config.bangumi_gallery.api_key, 1, this)
+            if (allDisplayConfig.bangumi.enable) getMalData(this.config.bangumi_gallery.user_id, this.config.bangumi_gallery.api_key, 2, this)
         } else {
             logger.warn('Unknown API')
         }
@@ -67,14 +74,20 @@ hexo.extend.console.register('bangumi-gallery', 'Get bangumi info', options, fun
             return
         }
 
+        const allDisplayConfig = configProvider.allDisplayConfig(this.config.bangumi_gallery)
+
         if (this.config.bangumi_gallery.api === 'bgm') {
-            getBgmData(this.config.bangumi_gallery.user_id, this)
+            if (allDisplayConfig.book.enable) bgm.getBgmData(this.config.bangumi_gallery.user_id, 1, this)
+            if (allDisplayConfig.bangumi.enable) bgm.getBgmData(this.config.bangumi_gallery.user_id, 2, this)
+            if (allDisplayConfig.music.enable) bgm.getBgmData(this.config.bangumi_gallery.user_id, 3, this)
+            if (allDisplayConfig.game.enable) bgm.getBgmData(this.config.bangumi_gallery.user_id, 4, this)
         } else if (this.config.bangumi_gallery.api === 'mal') {
             if (!this.config.bangumi_gallery.api_key) {
                 logger.warn('API key not found')
                 return
             }
-            getMalData(this.config.bangumi_gallery.user_id, this.config.bangumi_gallery.api_key, this)
+            if (allDisplayConfig.book.enable) getMalData(this.config.bangumi_gallery.user_id, this.config.bangumi_gallery.api_key, 1, this)
+            if (allDisplayConfig.bangumi.enable) getMalData(this.config.bangumi_gallery.user_id, this.config.bangumi_gallery.api_key, 2, this)
         } else {
             logger.warn('Unknown API')
         }

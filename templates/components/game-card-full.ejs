@@ -10,21 +10,17 @@
                target="_blank"><%= item.name_local === '' ? item.name : item.name_local %></a>
         </div>
         <div class="bangumi-card-info-bar">
-            <% if (index === 1 && display_config.progress) { %>
-                <div class="bangumi-card-info-item">
-                    <div style="font-weight: normal; margin-bottom: 5px"><%= __('bangumi.progress') %></div>
-                    <div><%= item.ep_status %> / <%= item.eps %></div>
-                </div>
-            <% } else { %>
-                <% if (item.eps === 0) { %>
+            <div class="bangumi-card-info-item">
+                <div style="font-weight: normal; margin-bottom: 5px"><%= __('game.rank') %></div>
+                <% if (item.rank === null) { %>
                     <div class="bangumi-card-info-item"><%= __('noData') %></div>
                 <% } else { %>
-                    <div class="bangumi-card-info-item"><%= __('bangumi.totalEp', item.eps) %></div>
+                    <div class="bangumi-card-info-item"><%= item.rank %></div>
                 <% } %>
-            <% } %>
+            </div>
             <div class="separator"></div>
             <div class="bangumi-card-info-item mobile-hide">
-                <div style="font-weight: normal; margin-bottom: 5px"><%= __('bangumi.airDate') %></div>
+                <div style="font-weight: normal; margin-bottom: 5px"><%= __('game.date') %></div>
                 <% if (item.date) { %>
                     <div><%= item.date %></div>
                 <% } else { %>
@@ -33,7 +29,7 @@
             </div>
             <div class="separator mobile-hide"></div>
             <div class="bangumi-card-info-item">
-                <div style="font-weight: normal; margin-bottom: 5px"><%= __('bangumi.score') %></div>
+                <div style="font-weight: normal; margin-bottom: 5px"><%= __('game.score') %></div>
                 <div><%= item.score %></div>
             </div>
         </div>

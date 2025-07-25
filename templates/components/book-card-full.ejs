@@ -12,19 +12,19 @@
         <div class="bangumi-card-info-bar">
             <% if (index === 1 && display_config.progress) { %>
                 <div class="bangumi-card-info-item">
-                    <div style="font-weight: normal; margin-bottom: 5px"><%= __('bangumi.progress') %></div>
-                    <div><%= item.ep_status %> / <%= item.eps %></div>
+                    <div style="font-weight: normal; margin-bottom: 0"><%= __('book.progress') %></div>
+                    <div style="margin: 0; font-size: xx-small"><%= __('book.ep') %>: <%= item.ep_status %> / <%= item.eps %></div>
+                    <div style="margin-top: 0; margin-bottom: 3px; font-size: xx-small"><%= __('book.volume') %>: <%= item.vol_status %> / <%= item.volumes %></div>
                 </div>
             <% } else { %>
-                <% if (item.eps === 0) { %>
-                    <div class="bangumi-card-info-item"><%= __('noData') %></div>
-                <% } else { %>
-                    <div class="bangumi-card-info-item"><%= __('bangumi.totalEp', item.eps) %></div>
-                <% } %>
+                <div class="bangumi-card-info-item">
+                    <div class="bangumi-card-info-item"><%= __('book.totalEp', item.eps === 0 ? '-' : item.eps) %></div>
+                    <div class="bangumi-card-info-item"><%= __('book.totalVol', item.volumes === 0 ? '-' : item.volumes) %></div>
+                </div>
             <% } %>
             <div class="separator"></div>
             <div class="bangumi-card-info-item mobile-hide">
-                <div style="font-weight: normal; margin-bottom: 5px"><%= __('bangumi.airDate') %></div>
+                <div style="font-weight: normal; margin-bottom: 5px"><%= __('book.date') %></div>
                 <% if (item.date) { %>
                     <div><%= item.date %></div>
                 <% } else { %>

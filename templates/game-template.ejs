@@ -1,0 +1,73 @@
+<% if (display_config.quote) { %>
+    <blockquote>
+        <p class="quote"><%- display_config.quote; %></p>
+    </blockquote>
+<% } %>
+<style>
+    <%- include('index.css') %>
+</style>
+<div class="tabs">
+    <div class="tab-btn" onclick="tabClick(0); initPagination(0, <%= display_config.page_size %>)">
+        <a href="javascript:void(0);" rel="external" target="_self"><%= __('game.plan') %> (<%= plan.length %>)</a>
+    </div>
+    <div class="tab-btn" onclick="tabClick(1); initPagination(1, <%= display_config.page_size %>)">
+        <a href="javascript:void(0);" rel="external" target="_self"><%= __('game.doing') %> (<%= doing.length %>)</a>
+    </div>
+    <div class="tab-btn" onclick="tabClick(2); initPagination(2, <%= display_config.page_size %>)">
+        <a href="javascript:void(0);" rel="external" target="_self"><%= __('game.completed') %> (<%= completed.length %>)</a>
+    </div>
+</div>
+<% if (display_config.size === 'lite') { %>
+    <div id="lite-mode">
+        <div id="plan-to-watch" class="bangumi-container bangumi-container-lite hide"
+             style="grid-template-columns: repeat(auto-fill, <%= 110 + display_config.margin %>px);">
+            <% plan.forEach(function(item, index) { %>
+                <%- include('components/bangumi-card-lite.ejs', {item, api, display_config}) %>
+            <% }); %>
+        </div>
+        <div id="watching" class="bangumi-container bangumi-container-lite hide"
+             style="grid-template-columns: repeat(auto-fill, <%= 110 + display_config.margin %>px);">
+            <% doing.forEach(function(item) { %>
+                <%- include('components/bangumi-card-lite.ejs', {item, api, display_config}) %>
+            <% }); %>
+        </div>
+        <div id="completed" class="bangumi-container bangumi-container-lite hide"
+             style="grid-template-columns: repeat(auto-fill, <%= 110 + display_config.margin %>px);">
+            <% completed.forEach(function(item) { %>
+                <%- include('components/bangumi-card-lite.ejs', {item, api, display_config}) %>
+            <% }); %>
+        </div>
+    </div>
+<% } else { %>
+    <div id="full-mode">
+        <div id="plan-to-watch" class="bangumi-container hide"
+             style="grid-template-columns: repeat(auto-fill, <%= 110 + display_config.margin %>px);">
+            <% plan.forEach(function(item, index) { %>
+                <%- include('components/game-card-full.ejs', {item, display_config, index: 0}) %>
+            <% }); %>
+        </div>
+        <div id="watching" class="bangumi-container hide"
+             style="grid-template-columns: repeat(auto-fill, <%= 110 + display_config.margin %>px);">
+            <% doing.forEach(function(item) { %>
+                <%- include('components/game-card-full.ejs', {item, display_config, index: 1}) %>
+            <% }); %>
+        </div>
+        <div id="completed" class="bangumi-container hide"
+             style="grid-template-columns: repeat(auto-fill, <%= 110 + display_config.margin %>px);">
+            <% completed.forEach(function(item) { %>
+                <%- include('components/game-card-full.ejs', {item, display_config, index: 2}) %>
+            <% }); %>
+        </div>
+    </div>
+<% } %>
+
+<%- include('components/pagination.ejs', {__, index: 0}) %>
+<%- include('components/pagination.ejs', {__, index: 1}) %>
+<%- include('components/pagination.ejs', {__, index: 2}) %>
+
+<script>
+    <%- include('index.js') %>
+    <%- include('pagination.js') %>
+    document.getElementsByClassName('tab-btn')[<%- display_config.index %>].click();
+    initPagination(<%- display_config.index %>, <%- display_config.page_size %>)
+</script>
