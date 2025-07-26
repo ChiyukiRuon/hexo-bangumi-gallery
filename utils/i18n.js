@@ -52,39 +52,95 @@ i18n.set('zh-CN', {
 });
 
 i18n.set('zh-TW', {
-    planToWatch: '想看',
-    completed: '看过',
-    watching: '在看',
     prev: '上一頁',
     next: '下一頁',
     start: '首頁',
     end: '尾頁',
-    noAir: '尚未播出',
-    airing: '正在播出',
-    airDate: '播出日期',
-    noData: '暫無數據',
-    progress: '觀看進度',
-    score: '評分',
-    totalEp: '全 %d 話',
-    onlyBgmNotice: '詳細佈局僅支援Bangumi數據'
+    noData: '暫無資料',
+    onlyBgmNotice: '詳細佈局僅支援 Bangumi 資料',
+    book: {
+        plan: '想讀',
+        completed: '讀過',
+        doing: '在讀',
+        score: '評分',
+        date: '發售日期',
+        progress: '閱讀進度',
+        ep: '章節',
+        volume: '卷',
+        totalEp: '全 %s 話',
+        totalVol: '全 %s 卷'
+    },
+    bangumi: {
+        plan: '想看',
+        completed: '看過',
+        doing: '在看',
+        airDate: '播放日期',
+        progress: '觀看進度',
+        score: '評分',
+        totalEp: '全 %d 話'
+    },
+    music: {
+        plan: '想聽',
+        completed: '聽過',
+        doing: '在聽',
+        score: '評分',
+        rank: '排名',
+        date: '發行日期'
+    },
+    game: {
+        plan: '想玩',
+        completed: '玩過',
+        doing: '在玩',
+        rank: '排名',
+        score: '評分',
+        date: '發行日期'
+    }
 });
 
 i18n.set('en', {
-    planToWatch: 'Wish',
-    completed: 'Completed',
-    watching: 'Watching',
     prev: 'PREV',
     next: 'NEXT',
     start: 'START',
     end: 'END',
-    noAir: 'Not Yet Aired',
-    airing: 'Airing',
-    airDate: 'Air Date',
     noData: 'Unknown',
-    progress: 'Progress',
-    score: 'Score',
-    totalEp: '%d Episodes',
-    onlyBgmNotice: 'Full mode only supports Bangumi data'
+    onlyBgmNotice: 'Full mode is only available for Bangumi data',
+    book: {
+        plan: 'Wish',
+        completed: 'Completed',
+        doing: 'Reading',
+        score: 'Score',
+        date: 'Release Date',
+        progress: 'Progress',
+        ep: 'Chapter',
+        volume: 'Volume',
+        totalEp: '%s Chapters Total',
+        totalVol: '%s Volumes Total'
+    },
+    bangumi: {
+        plan: 'Wish',
+        completed: 'Completed',
+        doing: 'Watching',
+        airDate: 'Air Date',
+        progress: 'Progress',
+        score: 'Score',
+        totalEp: '%d Episodes Total'
+    },
+    music: {
+        plan: 'Wish',
+        completed: 'Completed',
+        doing: 'Listening',
+        score: 'Score',
+        rank: 'Rank',
+        date: 'Release Date'
+    },
+    game: {
+        plan: 'Want to Play',
+        completed: 'Played',
+        doing: 'Playing',
+        rank: 'Rank',
+        score: 'Score',
+        date: 'Release Date'
+    }
 });
 
 module.exports.i18n = i18n;
