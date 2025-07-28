@@ -2,8 +2,7 @@
 
 const axios = require('axios');
 const logger = require("../utils/logger");
-const formatBgmData = require('../utils/data-formatter');
-const formatter = require("hexo-bangumi-gallery/utils/data-formatter");
+const formatter = require('../utils/data-formatter')
 
 const SUBJECT_TYPE_KEY = ['', 'mangalist', 'animelist']
 const COLLECTION_TYPE = [1, 2, 3]

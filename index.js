@@ -6,7 +6,7 @@ const path = require('path')
 const bgm = require('./api/get-bgm-data')
 const getMalData = require('./api/get-mal-data')
 const logger = require('./utils/logger')
-const configProvider = require("hexo-bangumi-gallery/utils/config-provider");
+const configProvider = require("./utils/config-provider");
 
 const options = {
     options: [
