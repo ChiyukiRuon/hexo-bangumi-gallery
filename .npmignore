@@ -1,0 +1,7 @@
+.github/
+docs/
+
+README_EN.md
+
+*.log
+.DS_Store
